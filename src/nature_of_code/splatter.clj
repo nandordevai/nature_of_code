@@ -12,8 +12,8 @@
   (with-translation [(/ (width) 2) (/ (height) 2)]
     (loop [i 0]
       (when (< i 200)
-        (def x (int (* sd (random-gaussian))))
-        (def y (int (* sd (random-gaussian))))
+        (let [x (int (* sd (random-gaussian)))
+              y (int (* sd (random-gaussian)))])
         (fill 120 (+ 100 x) (+ 170 y) 200)
         (ellipse x y r r)
         (recur (inc i))))))
